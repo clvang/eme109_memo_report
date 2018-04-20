@@ -1,0 +1,188 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EME 109 :: Memo style laboratory Report
+% LaTeX Template
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt,letterpaper]{article}
+\usepackage[letterpaper,margin=1.0in]{geometry}
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{amsmath} % Required for some math elements 
+\usepackage[bookmarksopen=true,bookmarksnumbered=true,bookmarksopenlevel=4]{hyperref}
+\usepackage{fancyhdr}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+% \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+
+%----------------------------------------------------------------------------------------
+%	AUTHOR INFORMATION AND A BRIEF TITLE
+%----------------------------------------------------------------------------------------
+
+\title{Memo Style Report \\ \LaTeX\ Template \\ EME 109} 	% Fill in Title of Experiment
+\author{Author First and Last Name}				% Fill in Author Name
+\date{\today}									    % Date
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\cfoot{\thepage}
+
+\title{\thetitle} 
+
+\author{\theauthor} 
+
+\date{\today} 
+
+%----------------------------------------------------------------------------------------
+%	BEGINNING OF MAIN BODY OF REPORT 
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1 : INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+A short introduction section which includes a description of the experiment and a review of the objectives.
+
+\subsection{Description of Experiment}
+Describe the experiment here. 
+
+\subsection{Objectives}
+Describe the objectives of the experiment in this section.  If there are multiple objectives, you may choose to describe them in a list like so:
+\begin{description}
+	\item[First Objective] \hfill \\
+	Objective 1 text
+
+	\item[Second Objective] \hfill \\
+	Objective 2 text
+\end{description}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2 : Results and Discussion
+%----------------------------------------------------------------------------------------
+
+\section{Results and Discussion}
+
+The analyzed results and discussion of those results, including the analysis should be placed here in this section. Results may be reported in a table as shown in Table \ref{table_lable}.  The \LaTeX\ code for generating a table may look intimidating, but a useful resource to generate \LaTeX\ tables from excel can be found at: https://www.tablesgenerator.com.
+\begin{table}[ht]
+\centering
+\caption{My caption}
+\label{table_lable}
+\begin{tabular}{c|ccc}
+  & \textbf{Variable 1} & \textbf{Variable 2} & \textbf{Variable 3} \\
+ \hline
+\textbf{Variable 4} & 1 & 2 & 3 \\
+\textbf{Variable 5} & 4 & 5 & 6 \\
+\textbf{Variable 6} & 7 & 8 & 9 \\
+\textbf{Variable 7} & 10 & 11 & 12
+\end{tabular}
+\end{table}
+Additionally, plots or figures that may aid in interpreting experimental data can be inserted as shown in Fig. \ref{placeholderFigure}. Note that figures must be saved as a .jpg, .png, or .eps file type and be in the same directory as the ``memo.tex'' file.  Tables and Figures are inserted in the body of the document in \LaTeX\ as ``floats"; they will be placed automatically in an optimized way to eliminate white space and maximize the placement of text.
+\begin{figure}[ht]
+\begin{center}
+	\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
+	\caption{Figure caption.}
+	\label{placeholderFigure}
+\end{center}
+\end{figure}	
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3 : Conclusion
+%----------------------------------------------------------------------------------------
+
+\section{Conclusion}
+
+A brief summary of the pertinent results.
+%----------------------------------------------------------------------------------------
+%	SECTION 4: Appendix
+%----------------------------------------------------------------------------------------
+
+\section{Appendix}
+
+Raw data as copied from your lab book, example calculations, detailed descriptions, etc.  One of the strong points of \LaTeX\ is it's ability to handle the way in which equations are type-set.  For example calculations, it may be neccessary to write out equations.\\ 
+
+Some examples of equations are shown below in Eqn. \ref{eqn:uncertainty_equation}-\ref{eqn:dirac_delta}:
+
+%undertainty equation
+\begin{equation}
+	u_R 
+	=
+	\pm
+	\left[
+		\sum_{i=1}^{L}
+		\left( \theta_i u_{\bar{x}_i} \right)^2
+	\right]^{1/2}
+	,
+	\quad
+	\theta_i
+	=
+	\frac{\partial R}{\partial x_{i_{x=\bar{x}}} },
+	\quad
+	i=1,2,...,L
+	\label{eqn:uncertainty_equation}
+\end{equation}
+
+%Solution to first order system
+\begin{equation}
+	T_T (t)
+	=
+	A e^{\frac{t}{\tau}}
+	+
+	\frac{T_{\text{amp}}}{\tau i \omega + 1}
+	e^{i\omega t}
+\end{equation}
+
+%energy equation for open systems
+\begin{equation}
+	\dot{W}
+	-
+	\dot{Q}
+	+
+	\Sigma
+	\dot{m} e_{\text{out}}
+	-
+	\Sigma
+	\dot{m} e_{\text{in}}
+	+
+	\frac{d}{dt}
+	\left[ m e_{\text{cv}} \right]
+	=
+	0
+	\label{eqn:energy_equation}
+\end{equation}
+
+%equation for dirac delta
+\begin{equation}
+	\delta_{ij}
+	=
+	\begin{cases}
+		0, \quad i \ne j \\ 
+		1, \quad i=j
+	\end{cases}
+	\label{eqn:dirac_delta}
+\end{equation}
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
